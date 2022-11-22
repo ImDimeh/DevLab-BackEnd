@@ -1,0 +1,25 @@
+{
+  "name": "devlab-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImDimeh/DevLab-BackEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ImDimeh/DevLab-BackEnd/issues"
+  },
+  "homepage": "https://github.com/ImDimeh/DevLab-BackEnd#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "axios": "^1.1.3"
+  }
+}
