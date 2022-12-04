@@ -1,5 +1,0 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-npx tailwindcss -i ./style/style.css -o ./style-tailwind/style-tailwind.css --watch
