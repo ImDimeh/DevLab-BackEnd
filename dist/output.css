@@ -512,3 +512,167 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
+.h-56 {
+  height: 14rem;
+}
+
+.h-72 {
+  height: 18rem;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.w-9\/12 {
+  width: 75%;
+}
+
+.w-36 {
+  width: 9rem;
+}
+
+.w-56 {
+  width: 14rem;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-5\/6 {
+  width: 83.333333%;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.bg-amber-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 158 11 / var(--tw-bg-opacity));
+}
+
+.bg-amber-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(180 83 9 / var(--tw-bg-opacity));
+}
+
+.bg-blue-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
+}
+
+.bg-\[\] {
+  background-color: ;
+}
+
+.bg-\[\#02015F\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 1 95 / var(--tw-bg-opacity));
+}
+
+.bg-amber-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 191 36 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#29528A\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(41 82 138 / var(--tw-bg-opacity));
+}
+
+.text-amber-900 {
+  --tw-text-opacity: 1;
+  color: rgb(120 53 15 / var(--tw-text-opacity));
+}
+
+.text-amber-800 {
+  --tw-text-opacity: 1;
+  color: rgb(146 64 14 / var(--tw-text-opacity));
+}
+
+.text-teal-400 {
+  --tw-text-opacity: 1;
+  color: rgb(45 212 191 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-blue-900 {
+  --tw-text-opacity: 1;
+  color: rgb(30 58 138 / var(--tw-text-opacity));
+}
+
+.text-\[\#18B794\] {
+  --tw-text-opacity: 1;
+  color: rgb(24 183 148 / var(--tw-text-opacity));
+}
+
+.text-\[\#29528A\] {
+  --tw-text-opacity: 1;
+  color: rgb(41 82 138 / var(--tw-text-opacity));
+}
+
+.text-\[\#23277B\] {
+  --tw-text-opacity: 1;
+  color: rgb(35 39 123 / var(--tw-text-opacity));
+}
