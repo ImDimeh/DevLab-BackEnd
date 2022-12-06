@@ -111,8 +111,6 @@ requette = 'https://api.themoviedb.org/3/movie/popular?api_key=cecfdcc4951a5a9c7
             console.log("fin de la requette ")
         });
 
-    // les moins populaires
-   // axios.get('https://api.themoviedb.org/3/movie/popular?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&page=500', {
 
 </script>
 </body>
