@@ -11,8 +11,7 @@
 </head>
 <body>
 <?php
-require "page/components/orderBy.php" ;
-
+require_once "../page/components/orderBy.php";
 ?>
 </body>
 </html>
