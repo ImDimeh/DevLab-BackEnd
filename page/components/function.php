@@ -13,14 +13,17 @@
                 document.getElementById("genre")
 
                 console.log(data.name);
-                const genre = document.createElement('a');
+                const genre = document.createElement('button');
+                
 
                     const GenreName = data.name
                     genre.innerText = GenreName ;
+                    genre.onclick = GetDataByLink('https://api.themoviedb.org/3/discover/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&sort_by=title.asc&page=1&with_genres='+data.id)
+                    //https://api.themoviedb.org/3/discover/movie?api_key=###&with_genres=28
                     console.log(genre)
 
                      document.getElementById("genre").appendChild(genre);
-
+                    
 
             }
                 
@@ -47,7 +50,7 @@ genre.addEventListener('click', event => {
         axios.get(requette, {}).then(function (response) {
             const datas = response.data.results
 
-            console.log(datas);
+            //console.log(datas);
 
             datas.forEach(data => {
                     const item1 = document.createElement('h3');
@@ -68,7 +71,7 @@ genre.addEventListener('click', event => {
                 link.innerText = "en savoir plus sur le film "
                     link.href = "moovie?id="+id
 
-                    console.log(link)
+                    //console.log(link)
                 container.appendChild(link)
 
                     const img = document.createElement('img');
@@ -80,7 +83,7 @@ genre.addEventListener('click', event => {
 
                     container.appendChild(img)
 
-                    console.log( titre)
+                    //console.log( titre)
                 }
             )
         })
