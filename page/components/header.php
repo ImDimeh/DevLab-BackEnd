@@ -13,10 +13,11 @@
 
     <nav>
        <ul>
-        <li id="genre"> genre</li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li id="genre"><a> Genres </a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
        </ul>
     </nav>
 </head>

@@ -1,6 +1,42 @@
 <?php
 ?>
 <script>
+
+    function test(){
+    
+          axios.get("https://api.themoviedb.org/3/genre/movie/list?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr", {}).then(function (response) {
+            const Genres = response.data.genres
+
+            console.log(Genres);
+            Genres.forEach(data => {
+
+                document.getElementById("genre")
+
+                console.log(data.name);
+                const genre = document.createElement('a');
+
+                    const GenreName = data.name
+                    genre.innerText = GenreName ;
+                    console.log(genre)
+
+                     document.getElementById("genre").appendChild(genre);
+
+
+            }
+                
+            )
+        })
+}
+
+const genre = document.querySelector('#genre');
+
+
+genre.addEventListener('click', event => {
+    test()
+  
+});
+
+
     function GetDataByLink(link) {
 
 
