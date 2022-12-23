@@ -11,6 +11,14 @@
     <title>Page de Film</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <nav>
+       <ul>
+        <li id="genre"> genre</li>
+        <li></li>
+        <li></li>
+        <li></li>
+       </ul>
+    </nav>
 </head>
 <body>
 
