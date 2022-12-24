@@ -11,7 +11,7 @@
 
 <button onclick="GetDataByLink('https://api.themoviedb.org/3/discover/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&sort_by=title.asc&page=1')"  id="changeButton"> Par nom </button>
 
-<button onclick="GetDataByLink()"  id="changeButton"> les plus visionné</button>
+<button onclick="GetDataByLink('https://api.themoviedb.org/3/discover/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&sort_by=title.asc&page=1&with_genres=28)"  id="changeButton"> les plus visionné</button>
 
 <button onclick="GetDataByLink()"  id="changeButton"> Age </button>
 

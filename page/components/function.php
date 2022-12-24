@@ -22,9 +22,9 @@
                     
                   //  genre.onclick ="GetDataByLink('https://api.themoviedb.org/3/discover/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&sort_by=title.asc&page=1&with_genres=' + data.id)"
 
-                  genre.setAttribute('OnClick' , "GetDataByLink('https://api.themoviedb.org/3/discover/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&sort_by=title.asc&page=1&with_genres=" + data.id + ")" ) 
+                  genre.setAttribute('OnClick' , "GetDataByLink('https://api.themoviedb.org/3/discover/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&sort_by=title.asc&page=1&with_genres=" + data.id + "')" ) 
                     genre.setAttribute('id',data.id);
-                   // genre.setAttribute('onclick','doSomething();')
+                   
                     console.log(genre)
                     
                     //https://api.themoviedb.org/3/discover/movie?api_key=###&with_genres=28
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', event => {
 
     function GetDataByLink(link) {
 
-
+            console.log("function")
 
         const container = document.getElementById("container")
         container.innerHTML = ""
