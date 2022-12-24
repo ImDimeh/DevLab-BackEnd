@@ -34,7 +34,7 @@
 const genre = document.querySelector('#genre');
 
 
-genre.addEventListener('click', event => {
+document.addEventListener('DOMContentLoaded', event => {
     test()
   
 });
