@@ -2,7 +2,43 @@
 ?>
 <script>
 
-    function test(){
+    function addGenreMoovie(){
+    
+          axios.get("https://api.themoviedb.org/3/genre/movie/list?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr", {}).then(function (response) {
+            const Genres = response.data.genres
+
+            console.log(Genres);
+            Genres.forEach(data => {
+
+                document.getElementById("genre")
+
+                console.log(data.name);
+                const genre = document.createElement('button');
+                
+
+                    const GenreName = data.name
+                    genre.innerText = GenreName ;
+                    
+                    
+                  //  genre.onclick ="GetDataByLink('https://api.themoviedb.org/3/discover/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&sort_by=title.asc&page=1&with_genres=' + data.id)"
+
+                  genre.setAttribute('OnClick' , "GetDataByLink('https://api.themoviedb.org/3/discover/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&sort_by=title.asc&page=1&with_genres=" + data.id + "')" ) 
+                    genre.setAttribute('id',data.id);
+                   
+                    console.log(genre)
+                    
+                    //https://api.themoviedb.org/3/discover/movie?api_key=###&with_genres=28
+                    
+
+                     document.getElementById("genre").appendChild(genre);
+                    
+
+            }
+                
+            )
+        })
+}
+function AddAgeMoovie(){
     
           axios.get("https://api.themoviedb.org/3/genre/movie/list?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr", {}).then(function (response) {
             const Genres = response.data.genres
@@ -43,7 +79,8 @@ const genre = document.querySelector('#genre');
 
 
 document.addEventListener('DOMContentLoaded', event => {
-    test()
+    addGenreMoovie()
+    AddAgeMoovie()
   
 });
 
