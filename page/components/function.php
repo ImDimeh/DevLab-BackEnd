@@ -7,12 +7,12 @@
           axios.get("https://api.themoviedb.org/3/genre/movie/list?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr", {}).then(function (response) {
             const Genres = response.data.genres
 
-            console.log(Genres);
+          
             Genres.forEach(data => {
 
-                document.getElementById("genre")
+                document.getElementById("certifications")
 
-                console.log(data.name);
+               
                 const genre = document.createElement('button');
                 
 
@@ -25,7 +25,7 @@
                   genre.setAttribute('OnClick' , "GetDataByLink('https://api.themoviedb.org/3/discover/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&sort_by=title.asc&page=1&with_genres=" + data.id + "')" ) 
                     genre.setAttribute('id',data.id);
                    
-                    console.log(genre)
+                    
                     
                     //https://api.themoviedb.org/3/discover/movie?api_key=###&with_genres=28
                     
@@ -40,33 +40,33 @@
 }
 function AddAgeMoovie(){
     
-          axios.get("https://api.themoviedb.org/3/genre/movie/list?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr", {}).then(function (response) {
-            const Genres = response.data.genres
+          axios.get("https://api.themoviedb.org/3/certification/movie/list?api_key=cecfdcc4951a5a9c7eed2dd44b519117", {}).then(function (response) {
+            const certification = response.data.certifications.FR
 
-            console.log(Genres);
-            Genres.forEach(data => {
+            console.log(certification);
+                certification.forEach(data => {
 
-                document.getElementById("genre")
-
-                console.log(data.name);
-                const genre = document.createElement('button');
                 
 
-                    const GenreName = data.name
-                    genre.innerText = GenreName ;
+                console.log(data.certification);
+                const certif = document.createElement('button');
+                
+
+                    const AgeMinValue = data.certification
+                    certif.innerText = AgeMinValue ;
                     
                     
                   //  genre.onclick ="GetDataByLink('https://api.themoviedb.org/3/discover/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&sort_by=title.asc&page=1&with_genres=' + data.id)"
 
-                  genre.setAttribute('OnClick' , "GetDataByLink('https://api.themoviedb.org/3/discover/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&sort_by=title.asc&page=1&with_genres=" + data.id + "')" ) 
-                    genre.setAttribute('id',data.id);
+                  certif.setAttribute('OnClick' , "GetDataByLink('https://api.themoviedb.org/3/discover/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&sort_by=popularity.desc&certification_country=FRcertification=" +  data.certification + "')" ) 
+                   // genre.setAttribute('id',data.id);
                    
-                    console.log(genre)
+                    console.log(certif)
                     
                     //https://api.themoviedb.org/3/discover/movie?api_key=###&with_genres=28
                     
 
-                     document.getElementById("genre").appendChild(genre);
+                     document.getElementById("certifications").appendChild(certif);
                     
 
             }

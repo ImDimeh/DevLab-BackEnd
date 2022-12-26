@@ -14,7 +14,7 @@
     <nav>
        <ul>
         <li id="genre"><a> Genres </a></li>
-        <li><a href=""></a></li>
+        <li id="certifications"><a> CERTIFICATIONS</a></li>
         <li><a href=""></a></li>
         <li><a href=""></a></li>
         <li><a href=""></a></li>
