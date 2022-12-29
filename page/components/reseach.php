@@ -17,11 +17,7 @@ recherche.addEventListener("input" , e => {
     req = "https://api.themoviedb.org/3/search/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&query=" + value
     req = req.replaceAll(" " , "+" )
     console.log(req)
-    axios.get(req, {}).then(function (response) {
-        const datas = response.data.results
-        console.log(req)
-
-    })
+    GetDataByLink(req)
         .catch(function (error) {
             console.log(error);
         })
