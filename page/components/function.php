@@ -2,17 +2,17 @@
 ?>
 <script>
 
-    function test(){
+    function addGenreMoovie(){
     
           axios.get("https://api.themoviedb.org/3/genre/movie/list?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr", {}).then(function (response) {
             const Genres = response.data.genres
 
-            console.log(Genres);
+          
             Genres.forEach(data => {
 
-                document.getElementById("genre")
+                document.getElementById("certifications")
 
-                console.log(data.name);
+               
                 const genre = document.createElement('button');
                 
 
@@ -25,7 +25,7 @@
                   genre.setAttribute('OnClick' , "GetDataByLink('https://api.themoviedb.org/3/discover/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&sort_by=title.asc&page=1&with_genres=" + data.id + "')" ) 
                     genre.setAttribute('id',data.id);
                    
-                    console.log(genre)
+                    
                     
                     //https://api.themoviedb.org/3/discover/movie?api_key=###&with_genres=28
                     
@@ -43,14 +43,15 @@ const genre = document.querySelector('#genre');
 
 
 document.addEventListener('DOMContentLoaded', event => {
-    test()
+    addGenreMoovie()
+    
   
 });
 
 
     function GetDataByLink(link) {
 
-            console.log("function")
+           
 
         const container = document.getElementById("container")
         container.innerHTML = ""

@@ -14,7 +14,11 @@
     <nav>
        <ul>
         <li id="genre"><a> Genres </a></li>
-        <li><a href=""></a></li>
+        <li id="certifications"><a> CERTIFICATIONS</a>
+    
+        <button onclick="GetDataByLink('')">tout public</button>
+           <button onclick="GetDataByLink('')">Pour Adulte</button>
+                </li>
         <li><a href=""></a></li>
         <li><a href=""></a></li>
         <li><a href=""></a></li>
