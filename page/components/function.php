@@ -2,38 +2,35 @@
 ?>
 <script>
 
+    function addGenreMoovie(){
     
+          axios.get("https://api.themoviedb.org/3/genre/movie/list?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr", {}).then(function (response) {
+            const Genres = response.data.genres
+
+          
+            Genres.forEach(data => {
+
+                document.getElementById("certifications")
+
+               
+                const genre = document.createElement('button');
                 
 
-function AddAgeMoovie(){
-    
-          axios.get("https://api.themoviedb.org/3/certification/movie/list?api_key=cecfdcc4951a5a9c7eed2dd44b519117", {}).then(function (response) {
-            const certification = response.data.certifications.FR
-
-            console.log(certification);
-                certification.forEach(data => {
-
-                
-
-                console.log(data.certification);
-                const certif = document.createElement('button');
-                
-
-                    const AgeMinValue = data.certification
-                    certif.innerText = AgeMinValue ;
+                    const GenreName = data.name
+                    genre.innerText = GenreName ;
                     
                     
                   //  genre.onclick ="GetDataByLink('https://api.themoviedb.org/3/discover/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&sort_by=title.asc&page=1&with_genres=' + data.id)"
 
-                  certif.setAttribute('OnClick' , "GetDataByLink('https://api.themoviedb.org/3/discover/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&sort_by=popularity.desc&certification_country=FRcertification=" +  data.certification + "')" ) 
-                   // genre.setAttribute('id',data.id);
+                  genre.setAttribute('OnClick' , "GetDataByLink('https://api.themoviedb.org/3/discover/movie?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr&sort_by=title.asc&page=1&with_genres=" + data.id + "')" ) 
+                    genre.setAttribute('id',data.id);
                    
-                    console.log(certif)
+                    
                     
                     //https://api.themoviedb.org/3/discover/movie?api_key=###&with_genres=28
                     
 
-                     document.getElementById("certifications").appendChild(certif);
+                     document.getElementById("genre").appendChild(genre);
                     
 
             }
