@@ -44,14 +44,14 @@ const genre = document.querySelector('#genre');
 
 document.addEventListener('DOMContentLoaded', event => {
     addGenreMoovie()
-    AddAgeMoovie()
+    
   
 });
 
 
     function GetDataByLink(link) {
 
-            console.log("function")
+           
 
         const container = document.getElementById("container")
         container.innerHTML = ""

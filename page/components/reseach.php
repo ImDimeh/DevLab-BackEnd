@@ -7,7 +7,7 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
     const recherche = document.getElementById("moovie_Id")
-    console.log(recherche)
+    
 
 
 
@@ -19,7 +19,7 @@ recherche.addEventListener("input" , e => {
     console.log(req)
     axios.get(req, {}).then(function (response) {
         const datas = response.data.results
-        console.log(datas);
+        console.log(req)
 
     })
         .catch(function (error) {
