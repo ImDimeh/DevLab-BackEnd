@@ -1,5 +1,4 @@
-<?php
-?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,8 +12,22 @@
 <h1> en savoir plus sur les films</h1>
 <?php echo  $_GET['id']?>
 
+<div id="container" class=" h-1/10 w-5/6 bg-red-800 flex-row flex justify-around  flex-wrap">
+
+</div>
 
 <script>
+
+    document.addEventListener('DOMContentLoaded', event => {
+    GetDataId(id)
+    
+  
+});
+
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const id = urlParams.get('id')
 
     function GetDataId(ID) {
 
@@ -22,7 +35,7 @@
 
         const container = document.getElementById("container")
         container.innerHTML = ""
-        requette = 'https://api.themoviedb.org/3/movie/"' + ID + '"?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr'
+        requette = 'https://api.themoviedb.org/3/movie/' + ID + '?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr'
         console.log(requette)
         /*axios.get(requette, {}).then(function (response) {
             const datas = response.data.results
