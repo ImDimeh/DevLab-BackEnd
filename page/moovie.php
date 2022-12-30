@@ -15,7 +15,7 @@
 <div id="container" class=" h-1/10 w-5/6 bg-red-800 flex-row flex justify-around  flex-wrap">
 
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
 
     document.addEventListener('DOMContentLoaded', event => {
@@ -37,32 +37,30 @@
         container.innerHTML = ""
         requette = 'https://api.themoviedb.org/3/movie/' + ID + '?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr'
         console.log(requette)
-        /*axios.get(requette, {}).then(function (response) {
-            const datas = response.data.results
+        axios.get(requette, {}).then(function (response) {
+            const data = response.data
 
-            //console.log(datas);
+            console.log(data);
 
-            datas.forEach(data => {
-                    const item1 = document.createElement('h3');
-                    const titre = data.title
-                    item1.innerText = titre;
-                    item1.classList.add("text-[#18B794]");
-                    container.appendChild(item1);
+            // ajout du titre
 
+          
+                    const Titre = document.createElement('h3');
+                    const titreValue = data.title
+                    Titre.innerText = titreValue;
+                    Titre.classList.add("text-[#18B794]");
+                    container.appendChild(Titre);
+                    console.log(Titre)
 
+                    // ajout de la description
                     const p = document.createElement('p');
                     const description = data.overview
                     p.classList.add("text-[#23277B]");
                     p.innerText = description;
                     container.appendChild(p);
 
-                    const link = document.createElement("a")
-                    const id = data.id
-                link.innerText = "en savoir plus sur le film "
-                    link.href = "moovie.php?id="+id
-
-                    //console.log(link)
-                container.appendChild(link)
+                    
+                    // ajout du poster
 
                     const img = document.createElement('img');
                     const affiche = data.backdrop_path
@@ -71,19 +69,22 @@
 
                     img.classList.add("w-36")
 
+                    
+                    const budget = document.createElement('h3');
+                    const BudgetValue = data.budget
+                    budget.innerText = BudgetValue;
+                    budget.classList.add("text-[#18B794]");
+                    container.appendChild(budget);
+
+
                     container.appendChild(img)
 
                     //console.log( titre)
                 }
             )
-        })
-            .catch(function (error) {
-                console.log(error);
-            })
-            .then(function () {
-                console.log("fin de la requette ")
-            });*/
         }
+          
+        
 
 
 </script>
