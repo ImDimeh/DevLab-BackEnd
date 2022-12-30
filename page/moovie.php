@@ -48,7 +48,7 @@
                     const Titre = document.createElement('h3');
                     const titreValue = data.title
                     Titre.innerText = titreValue;
-                    Titre.classList.add("text-[#18B794]");
+                    Titre.classList.add("text-[#18B794] bg-red ");
                     container.appendChild(Titre);
                     console.log(Titre)
 
