@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 require_once "../page/components/header.php";
 
@@ -8,5 +9,5 @@ $connection = new  connection();
 $result = $connection->getAllUserSeeMovie();
 $r = $connection->getAllUserSeeMovieById(35);
 
-print_r ($r);
+print_r ($_SESSION["data"])
 ?>

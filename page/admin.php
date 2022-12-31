@@ -10,7 +10,7 @@ $titre_header="PAGE D'ADMIN";
 <h1> LISTE  DE CHAQUE UTILISATEUR</h1>
 
 <?php
-require_once 'connection.php';
+require_once '../connection.php';
 $connection = new connection();
 
 $list_user = $connection->getAllUserData();
