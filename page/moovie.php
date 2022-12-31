@@ -1,4 +1,7 @@
 
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,29 +22,46 @@
 
 
 
-<?php require_once '../connection.php'; ?>
+<?php require_once '../connection.php';
+echo $_GET['id'];
+echo "    A   ";
+
+echo"   C   ";
+echo $_SESSION["id"];
+$user_id = $_SESSION["id"];
+$connection = new  connection();
+?>
+
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
 
+const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const id = urlParams.get('id')
+    
+     var user_Id = <?php echo json_encode(user_id); ?>;
+                 
+
     document.addEventListener('DOMContentLoaded', event => {
     GetDataId(id)
+    
     
   
 });
 
 const addSeebuttton = document.getElementById("AddSee")
-$connection = new  connection();
+
 addSeebuttton.addEventListener('click', event => {
-    console.log( $_SESSION["id"]  ,$_GET['id'])
-    //$connection->addSeeMovie( $_SESSION["id"]  ,$_GET['id'])
+    console.log(id);
+   console.log(user_Id);
+    $connection->addSeeMovie(user_Id ; id);
+    
 
 
 })
 
 
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const id = urlParams.get('id')
+    
 
     function GetDataId(ID) {
 
@@ -96,7 +116,9 @@ addSeebuttton.addEventListener('click', event => {
                     //console.log( titre)
                 }
             )
+
         }
+
           
         
 

@@ -32,14 +32,14 @@ $r = $connection->getAllUserSeeMovieById(35);
 
    document.addEventListener('DOMContentLoaded', event => {
     log();
-   console.log(seeMovieArray)
+   
     
   
 });
 function log (){
 
   seeMovieArray.forEach(data => {
-   console.log(data.moovie_id)
+   
    GetDataId(data.moovie_id)
     
   })
@@ -51,7 +51,7 @@ function log (){
         const seeMovieContaienr = document.getElementById("seeMovieContaienr")
         seeMovieContaienr.innerHTML = ""
         requette = 'https://api.themoviedb.org/3/movie/' + ID + '?api_key=cecfdcc4951a5a9c7eed2dd44b519117&language=fr'
-        console.log(requette)
+        
         axios.get(requette, {}).then(function (response) {
             const data = response.data
 
