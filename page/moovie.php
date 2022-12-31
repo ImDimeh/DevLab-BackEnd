@@ -10,11 +10,16 @@
 </head>
 <body>
 <h1> en savoir plus sur les films</h1>
-<?php echo  $_GET['id']?>
+
 
 <div id="container" class=" h-1/10 w-5/6 bg-red-800 flex-row flex justify-around  flex-wrap">
 
 </div>
+<button id="AddSee"   >ajouter dans la liste des films vue </button>
+
+
+
+<?php require_once '../connection.php'; ?>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
 
@@ -23,6 +28,15 @@
     
   
 });
+
+const addSeebuttton = document.getElementById("AddSee")
+$connection = new  connection();
+addSeebuttton.addEventListener('click', event => {
+    console.log( $_SESSION["id"]  ,$_GET['id'])
+    //$connection->addSeeMovie( $_SESSION["id"]  ,$_GET['id'])
+
+
+})
 
 
     const queryString = window.location.search;
@@ -48,7 +62,7 @@
                     const Titre = document.createElement('h3');
                     const titreValue = data.title
                     Titre.innerText = titreValue;
-                    Titre.classList.add("text-[#18B794] bg-red ");
+                    Titre.classList.add("text-[#18B794]");
                     container.appendChild(Titre);
                     console.log(Titre)
 

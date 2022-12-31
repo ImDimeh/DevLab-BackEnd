@@ -116,4 +116,17 @@ class connection
         return $results;
 
     }
+    public function addSeeMovie(int $id, int $movie_id): bool
+    {
+        $query = 'INSERT INTO watch (user_id , moovie_id)
+                  values (:user_id , :moovie_id
+                  )';
+
+        $statement = $this->pdo->prepare($query);
+        return $statement->execute([
+            'user_id' => $id,
+            'moovie_id' => $movie_id
+
+        ]);
+    }
 }
