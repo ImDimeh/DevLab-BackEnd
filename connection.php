@@ -105,4 +105,15 @@ class connection
         return $results;
 
     }
+    public function getAllUserSeeMovieById(int $id): array
+    {
+        $query = 'SELECT * from `watch` where user_id = :id';
+        $statement = $this->pdo->prepare($query);
+        $statement->execute([
+            'id' => $id
+        ]);
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+
+    }
 }
