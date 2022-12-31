@@ -94,4 +94,15 @@ class connection
         return $results;
 
     }
+
+    // page seeMovie
+    public function getAllUserSeeMovie(): array
+    {
+        $query = 'SELECT * from `watch` ';
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+
+    }
 }
