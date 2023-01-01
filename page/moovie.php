@@ -18,22 +18,32 @@ session_start();
 <div id="container" class=" h-1/10 w-5/6 bg-red-800 flex-row flex justify-around  flex-wrap">
 
 </div>
-<button id="AddSee"   >ajouter dans la liste des films vue </button>
+<form method="post">
 
+<input type="submit" name="AddSee" value="ajouter dans la liste des films vue  ">
+</form>
 
 
 <?php require_once '../connection.php';
 echo $_GET['id'];
 echo "    A   ";
 
-echo"   C   ";
+echo"   session id   ";
 echo $_SESSION["id"];
 $user_id = $_SESSION["id"];
 $connection = new  connection();
+
+ if (isset($_POST['AddSee'])) {
+    $connection->addSeeMovie($user_id , $_GET['id']);
+ }
+
+
 ?>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
+
+    GetDataId(<?php echo $_GET['id']; ?>)
 
 const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -42,25 +52,14 @@ const queryString = window.location.search;
      var user_Id = <?php echo json_encode(user_id); ?>;
                  
 
-    document.addEventListener('DOMContentLoaded', event => {
-    GetDataId(id)
-    
+
+document.addEventListener('DOMContentLoaded', event => {
+    console.log("test")
+   GetDataId(id)
+   
     
   
 });
-
-const addSeebuttton = document.getElementById("AddSee")
-
-addSeebuttton.addEventListener('click', event => {
-    console.log(id);
-   console.log(user_Id);
-    $connection->addSeeMovie(user_Id ; id);
-    
-
-
-})
-
-
     
 
     function GetDataId(ID) {
