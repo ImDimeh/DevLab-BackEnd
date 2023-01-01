@@ -107,7 +107,7 @@ class connection
     }
     public function getAllUserSeeMovieById(int $id): array
     {
-        $query = 'SELECT * from `watch` where user_id = :id';
+        $query = 'SELECT DISTINCT * from `watch` where user_id = :id';
         $statement = $this->pdo->prepare($query);
         $statement->execute([
             'id' => $id
