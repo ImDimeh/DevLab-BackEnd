@@ -12,17 +12,10 @@ var_dump( $_SESSION["name"]);
 
 
 <?php
-require_once 'connection.php';
+require_once '../connection.php';
 $connection = new connection();
 
 ?>
 </body>
 </html>
 
-<?php
-require_once 'connection.php';
-
-
-
-
-?>

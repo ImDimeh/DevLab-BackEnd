@@ -94,4 +94,39 @@ class connection
         return $results;
 
     }
+
+    // page seeMovie
+    public function getAllUserSeeMovie(): array
+    {
+        $query = 'SELECT * from `watch` ';
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+
+    }
+    public function getAllUserSeeMovieById(int $id): array
+    {
+        $query = 'SELECT DISTINCT * from `watch` where user_id = :id';
+        $statement = $this->pdo->prepare($query);
+        $statement->execute([
+            'id' => $id
+        ]);
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+
+    }
+    public function addSeeMovie(int $id, int $movie_id): bool
+    {
+        $query = 'INSERT INTO watch (user_id , moovie_id)
+                  values (:user_id , :moovie_id
+                  )';
+
+        $statement = $this->pdo->prepare($query);
+        return $statement->execute([
+            'user_id' => $id,
+            'moovie_id' => $movie_id
+
+        ]);
+    }
 }

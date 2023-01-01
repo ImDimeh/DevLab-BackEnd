@@ -49,8 +49,8 @@ $titre_header="page de login"
 </body>
 </html>
 <?php
-require_once 'user.php';
-require_once 'connection.php';
+require_once '../user.php';
+require_once '../connection.php';
 
 if($_POST) {
 
