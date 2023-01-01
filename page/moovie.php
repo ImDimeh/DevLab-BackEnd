@@ -35,6 +35,7 @@ $connection = new  connection();
 
  if (isset($_POST['AddSee'])) {
     $connection->addSeeMovie($user_id , $_GET['id']);
+    
  }
 
 
@@ -43,23 +44,24 @@ $connection = new  connection();
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
 
-    GetDataId(<?php echo $_GET['id']; ?>)
+  
 
 const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const id = urlParams.get('id')
     
-     var user_Id = <?php echo json_encode(user_id); ?>;
+    
                  
 
 
 document.addEventListener('DOMContentLoaded', event => {
     console.log("test")
-   GetDataId(id)
+   GetDataId(id);
    
     
   
 });
+
     
 
     function GetDataId(ID) {
@@ -73,7 +75,7 @@ document.addEventListener('DOMContentLoaded', event => {
         axios.get(requette, {}).then(function (response) {
             const data = response.data
 
-            console.log(data);
+            
 
             // ajout du titre
 
@@ -117,6 +119,8 @@ document.addEventListener('DOMContentLoaded', event => {
             )
 
         }
+
+        
 
           
         
