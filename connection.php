@@ -133,7 +133,7 @@ class connection
 
     public function getAllUserWishList(): array
     {
-        $query = 'SELECT * from `wishlist` ';
+        $query = 'SELECT * from `whishlist` ';
         $statement = $this->pdo->prepare($query);
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -142,7 +142,7 @@ class connection
     }
     public function getAllUserWishListById(int $id): array
     {
-        $query = 'SELECT DISTINCT * from `wishlist` where user_id = :id';
+        $query = 'SELECT DISTINCT * from `whishlist` where user_id = :id';
         $statement = $this->pdo->prepare($query);
         $statement->execute([
             'id' => $id
