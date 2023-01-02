@@ -153,7 +153,7 @@ class connection
     }
     public function addWishList(int $id, int $movie_id): bool
     {
-        $query = 'INSERT INTO wishlist (user_id , moovie_id)
+        $query = 'INSERT INTO `whishlist` (user_id , moovie_id)
                   values (:user_id , :moovie_id
                   )';
 

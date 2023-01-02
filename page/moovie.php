@@ -21,20 +21,22 @@ session_start();
 <form method="post">
 
 <input type="submit" name="AddSee" value="ajouter dans la liste des films vue  ">
+<input type="submit" name="Addwhishlist" value="ajouter dans la liste des à voir ">
 </form>
 
 
 <?php require_once '../connection.php';
-echo $_GET['id'];
-echo "    A   ";
 
-echo"   session id   ";
-echo $_SESSION["id"];
 $user_id = $_SESSION["id"];
 $connection = new  connection();
 
  if (isset($_POST['AddSee'])) {
     $connection->addSeeMovie($user_id , $_GET['id']);
+    
+ }
+
+ if (isset($_POST['Addwhishlist'])) {
+    $connection->addWishList($user_id , $_GET['id']);
     
  }
 
