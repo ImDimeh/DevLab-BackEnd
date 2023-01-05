@@ -12,7 +12,7 @@ session_start();
     <title>Document</title>
 </head>
 <body>
-<h1> en savoir plus sur les films</h1>
+
 
 
 <div id="container" class=" h-1/10 w-5/6 bg-red-800 flex-row flex justify-around  flex-wrap">
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', event => {
             // ajout du titre
 
           
-                    const Titre = document.createElement('h3');
+                    const Titre = document.createElement('h1');
                     const titreValue = data.title
                     Titre.innerText = titreValue;
                     Titre.classList.add("text-[#18B794]");
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', event => {
 
                     // ajout de la description
                     const p = document.createElement('p');
-                    const description = data.overview
+                    const description = "synopsis  : " +  data.overview
                     p.classList.add("text-[#23277B]");
                     p.innerText = description;
                     container.appendChild(p);
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', event => {
 
                     
                     const budget = document.createElement('h3');
-                    const BudgetValue = data.budget
+                    const BudgetValue = "budget : " + data.budget + " $"
                     budget.innerText = BudgetValue;
                     budget.classList.add("text-[#18B794]");
                     container.appendChild(budget);
