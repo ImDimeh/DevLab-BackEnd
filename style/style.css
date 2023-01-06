@@ -2,4 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/*# sourceMappingURL=style.css.map */
+@layer base{
+    font-family: 'Montserrat', sans-serif;
+}
