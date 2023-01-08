@@ -12,9 +12,6 @@
 </head>
 <body>
 <header class="flex bg-gray-dark-2 p-5 items-center justify-center gap-5 text-[white]">
-    <form action="">
-        <input type="text" class="rounded-[20px]">
-    </form>
     <nav class="flex gap-[20px] text-[white] font-bold font-monserrat">
         <a class="p-1 px-5 hover:text-green-one" href="./accueil.php">ACCUEIL</a>
         <a class="p-1 px-5 hover:text-green-one" href="./films.php">FILMS</a>
