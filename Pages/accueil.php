@@ -22,8 +22,8 @@
         <nav class="flex gap-[20px] text-[white] font-bold font-monserrat ">
             <a class="p-1 px-5 hover:text-green-one" href="./accueil.php">ACCUEIL</a>
             <a class="p-1 px-5 hover:text-green-one" href="./films.php">FILMS</a>
-            <a class="p-1 px-5 hover:text-green-one" href="">MON COMPTE</a>
-            <a class="p-1 px-5 hover:text-green-one" href="">USERS</a>
+            <a class="p-1 px-5 hover:text-green-one" href="compte.php">MON COMPTE</a>
+            <a class="p-1 px-5 hover:text-green-one" href="users.php">USERS</a>
         </nav>
     </header>
     <main class="bg-gradient-to-b from-blue-one to-blue-two h-max opacity-20" >

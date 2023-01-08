@@ -16,29 +16,29 @@
         <input class="" type="text" style="border-radius:20px;">
     </form>
     <nav class="flex" style="display: flex; flex-direction:row; gap: 20px;">
-        <a class="" style="padding: 5px; padding-left: 20px; padding-right: 20px;" href="./accueil.php">ACCUEIL</a>
-        <a class="" style="padding: 5px; padding-left: 20px; padding-right: 20px;" href="">FILMS</a>
-        <a class="" style="padding: 5px; padding-left: 20px; padding-right: 20px;" href="">MON COMPTE</a>
-        <a class="" style="padding: 5px; padding-left: 20px; padding-right: 20px;" href="">USERS</a>
+        <a class="p-1 px-5 hover:text-green-one" href="./accueil.php">ACCUEIL</a>
+        <a class="p-1 px-5 hover:text-green-one"  href="./films.php">FILMS</a>
+        <a class="p-1 px-5 hover:text-green-one"  href="./compte.php">MON COMPTE</a>
+        <a class="p-1 px-5 hover:text-green-one"  href="./users.php">USERS</a>
     </nav>
 </header>
-<main class="bg-gradient-to-t from-blue-one to-blue-two" style="padding: 20px;height: 80vh;">
+<main class="bg-gradient-to-t from-blue-one to-blue-two" >
 
-    <div class="" style="display:flex;flex-direction:column;align-items: center; justify-content: center;height: 100%;">
-        <h1 style="color:white;">SE CONNECTER ...</h1>
+    <div class="" >
+        <h1 >SE CONNECTER ...</h1>
 
-        <form class="" action="" style="width: 50%;display: flex;flex-direction: column;gap:20px;margin-top: 20px;">
-            <div style="text-align: center;">
-                <input class="" type="email" placeholder="Saisir votre email" required style="border-radius:20px;padding: 10px;text-align: center;outline-color:white;width: 50%;">
+        <form class="" action="">
+            <div >
+                <input class="" type="email" placeholder="Saisir votre email" required >
             </div>
             <div style="text-align: center;">
-                <input class="" type="password" placeholder="Saisir votre mot de passe" required style="border-radius:20px;padding: 10px;text-align: center;outline-color:white;width: 50%;">
+                <input class="" type="password" placeholder="Saisir votre mot de passe" required >
             </div>
-            <input class="" type="submit" value="Se connecter" style="width:200px;margin:auto;padding:10px; padding-right: 20px;padding-left: 20px;background-color: green; color:white;margin-top: 40px;border-radius:20px;">
+            <input class="" type="submit" value="Se connecter" >
         </form>
-        <div class="" style="margin-top:20px;color:white;">
+        <div class="" >
             <p>
-                <a href="inscription.php" style="color:orangered;">S'INSCRIRE</a> si vous n'êtes pas déja inscrit !!!
+                <a href="inscription.php" >S'INSCRIRE</a> si vous n'êtes pas déja inscrit !!!
             </p>
         </div>
     </div>
