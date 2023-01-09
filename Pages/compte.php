@@ -19,19 +19,42 @@
         <a class="p-1 px-5 hover:text-green-one" href="./users.php">USERS</a>
     </nav>
 </header>
-<main class="bg-gradient-to-b from-blue-one to-blue-two h-max opacity-20 ">
-
-<div class="flex gap-[20px] text-[white] font-bold font-monserrat text-7xl place-content-center p-32"> MON COMPTE </div>
+<main class="bg-gradient-to-b from-blue-one to-blue-two h-max opacity-20 p-10">
     <img src="" alt="" class="rounded-full h-[350px] w-[350px] m-auto">
-    <div class="p-60">
-        <p class="font-monserrat font-bold text-[white] border-solid border-b mt-9 text-4xl"> Album 1 </p>
+    <div class="p-10 mt-9 flex gap-[20px] justify-center">
+        <input type="text"
+               style="padding:5px;outline:none;border:none; background-color:transparent; color:white; border-bottom: 2px solid MediumSeaGreen;text-align:center;"
+               placeholder="Recherche par Titre"
+               onchange="">
+        <select class="" style="padding:5px;outline:none;border:none; color:white;background-color:transparent; border-bottom: 2px solid MediumSeaGreen;"
+                onchange="">
+                <option class="text-left text-white" value="-1">Flitre par thématique</option>
+                <option class="text-black text-left" value="Horreur">Horreur</option>
+                <option class="text-black text-left" value="Aventure">Aventure</option>
+        </select>
     </div>
-
-    <div class="p-60">
-        <p class="font-monserrat font-bold text-[white] border-solid border-b mt-9 text-4xl"> Amis </p>
-        <p class=""></p>
+    <div class="flex text-center">
+        <a href="./album.php"
+           class="bg-green-one p-4 font-bold text-white hover:text-black place-content-center bg-opacity-90 font-monserrat mt-5 mb-10 text-center m-auto " >
+            Créer un album
+        </a>
     </div>
-
+    <p class="font-monserrat font-bold text-[white] border-solid border-b mt-9 text-4xl"> Mes albums </p>
+    <div class="p-10">
+        <!-- mettre la liste d'albums ici -->
+    </div>
+    <p class="font-monserrat font-bold text-[white] border-solid border-b mt-9 text-4xl"> Mes albums partagés </p>
+    <div class="p-10">
+        <!-- mettre la liste d'album partagés ici -->
+    </div>
+    <p class="font-monserrat font-bold text-[white] border-solid border-b mt-9 text-4xl"> Autres albums </p>
+    <div class="p-10">
+        <!-- mettre les autres albums ici -->
+    </div>
 </main>
+
+<script>
+
+</script>
 </body>
 </html>
