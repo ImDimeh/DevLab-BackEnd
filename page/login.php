@@ -2,7 +2,8 @@
 session_start();
 
 $titre="bienvenue sur la page de connexion";
-$titre_header="page de login"
+$titre_header="page de login";
+$error = $_SESSION["error"] ;
 ?>
 
 
@@ -10,6 +11,7 @@ $titre_header="page de login"
 
 <h1> Page De connexion</h1>
 
+<h2> <?php echo $error ?> </h2>
 
 <div class="form_conainter">
    

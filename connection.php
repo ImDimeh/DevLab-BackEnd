@@ -129,4 +129,39 @@ class connection
 
         ]);
     }
+    // page withlist 
+
+    public function getAllUserWishList(): array
+    {
+        $query = 'SELECT * from `whishlist` ';
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+
+    }
+    public function getAllUserWishListById(int $id): array
+    {
+        $query = 'SELECT DISTINCT * from `whishlist` where user_id = :id';
+        $statement = $this->pdo->prepare($query);
+        $statement->execute([
+            'id' => $id
+        ]);
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+
+    }
+    public function addWishList(int $id, int $movie_id): bool
+    {
+        $query = 'INSERT INTO `whishlist` (user_id , moovie_id)
+                  values (:user_id , :moovie_id
+                  )';
+
+        $statement = $this->pdo->prepare($query);
+        return $statement->execute([
+            'user_id' => $id,
+            'moovie_id' => $movie_id
+
+        ]);
+    }
 }
