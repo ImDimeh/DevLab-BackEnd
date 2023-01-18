@@ -18,7 +18,7 @@
     <header class="flex bg-gray-dark-2 p-5 items-center justify-center gap-5 text-blue-one h-[8vh]">
         <nav class="flex gap-[20px] text-[white] font-bold font-monserrat ">
             <a class="p-1 px-5 hover:text-green-one" href="./accueil.php">ACCUEIL</a>
-            <a class="p-1 px-5 hover:text-green-one" href="./films.php">FILMS</a>
+            <a class="p-1 px-5 hover:text-green-one" href="./films.php?mode=consulter">FILMS</a>
             <a class="p-1 px-5 hover:text-green-one" href="compte.php">MON COMPTE</a>
             <a class="p-1 px-5 hover:text-green-one" href="users.php">USERS</a>
         </nav>

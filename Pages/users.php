@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,9 +15,6 @@
 </head>
 <body>
 <header class="flex bg-gray-dark-2 p-5 items-center justify-center gap-5 text-[white]">
-    <form action="">
-        <input type="text" class="rounded-[20px]">
-    </form>
     <nav class="flex gap-[20px] text-[white] font-bold font-monserrat">
         <a class="p-1 px-5 hover:text-green-one" href="./accueil.php">ACCUEIL</a>
         <a class="p-1 px-5 hover:text-green-one" href="./films.php">FILMS</a>
@@ -23,7 +23,6 @@
     </nav>
 </header>
 <main class="bg-gradient-to-b from-blue-one to-blue-two h-max opacity-20 ">
-
     <div class="flex gap-[20px] text-[white] font-bold font-monserrat text-7xl place-content-center p-32"> MON COMPTE </div>
     <img src="" alt="" class="rounded-full h-[350px] w-[350px] m-auto">
     <div class="p-60">
@@ -34,7 +33,6 @@
         <p class="font-monserrat font-bold text-[white] border-solid border-b mt-9 text-4xl"> Amis </p>
 
     </div>
-
 </main>
 </body>
 </html>

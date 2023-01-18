@@ -1,4 +1,5 @@
 <?php
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -30,7 +31,10 @@
 
         <p class="font-monserrat font-bold text-[white] border-solid border-b mt-9 text-4xl "> Recherche de films </p>
         <div class="" style="display: flex;gap:40px;margin-top: 10px;">
-            <div><categorie :options="categories"/></div>
+            <div>
+                <categorie :options="categories"/>
+            </div>
+
             <input type="text"
                style="padding:5px;outline:none;border:none; background-color:transparent; color:white; border-bottom: 2px solid MediumSeaGreen;text-align:center;"
                placeholder="Recherche par nom/titre"
@@ -68,16 +72,18 @@
                     <option value="release_date.desc">Date de sortie décroissante</option>
                 </optgroup>
             </select>
-            <div><certification :options="certifications"/></div>
+
+            <div>
+                <certification :options="certifications"/>
+            </div>
             <div style="display:flex;gap:10px;justify-content:right;padding-right:20px;width: 100%;">
-                <a href="javascript:void();" onclick="prev();" style="text-align:center;padding:5px 10px;width:100px;background-color:MediumSeaGreen;color:white;border-radius:20px;text-decoration:none;">Moins</a>
-                <a href="javascript:void();" onclick="next();" style="text-align:center;padding:5px 10px;width:100px;background-color:MediumSeaGreen;color:white;border-radius:20px;text-decoration:none;">Plus</a>
+                <a class="bg-green-one hover:text-black " href="javascript:void();" onclick="prev();" style="text-align:center;padding:5px 10px;width:100px;color:white;border-radius:20px;text-decoration:none;">Moins</a>
+                <a class="bg-green-one hover:text-black " href="javascript:void();" onclick="next();" style="text-align:center;padding:5px 10px;width:100px;color:white;border-radius:20px;text-decoration:none;">Plus</a>
             </div>
         </div>
         <div class="">
             <div style="margin-top:10px;display:flex;gap:10px;overflow:auto;padding:20px;
                  flex-wrap: wrap;justify-content:center;background-color: transparent;">
-
                 <film v-for="film in films"
                   :title="film.original_title"
                   :path_backdrop="film.backdrop_path"
@@ -87,10 +93,34 @@
                   :popularity="film.popularity"
                   :date="film.release_date"
                   :id="film.id"
-                  onclick="consultationFilm(this)"
+                  :idfilm="film.id"
                   style="width:20%;background-color:white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"></film>
             </div>
         </div>
+
+        <?php if(isset($_GET["mode"]) && $_GET["mode"]=="choisir-films") {?>
+
+        <div style="display:flex;align-items: center;justify-content: center;">
+            <form action="./album.php" method="POST" onsubmit="return validForm();">
+                <input type="hidden" name="mode" value="ajouter-films">
+                <input type="hidden" id="filmsId" name="filmsId" value="">
+
+                <?php if(isset($_GET["albumId"])){ ?>
+
+                <input type="hidden" name="albumId" value="<?= $_GET["albumId"] ?>">
+
+                <?php } ?>
+
+                <button type="submit"
+                        class="bg-green-one"
+                        style="display:inline-block; margin-top:20px;text-align:center;padding:10px 10px;width:200px;color:white;border-radius:20px;text-decoration:none;">
+                    Valider ma sélection
+                </button>
+            </form>
+        </div>
+
+        <?php } ?>
+
     </main>
 
 
@@ -129,15 +159,31 @@
         })
 
         Vue.component('film', {
-            props: ['title', 'path_backdrop', 'src', 'popularity', 'date', 'poster_path', 'srcposter'],
+            props: ['title', 'path_backdrop', 'src', 'popularity', 'date', 'poster_path', 'srcposter','idfilm'],
             template:`
-              <div style="border-top-left-radius:10px 10px; border-top-right-radius:10px 10px;">
-                <img v-if="path_backdrop!=null" :src="src" width="100%" style="border-top-left-radius:10px 10px; border-top-right-radius:10px 10px;">
-                <img v-else-if="poster_path!=null" :src="srcposter" width="100%" style="border-top-left-radius:10px 10px; border-top-right-radius:10px 10px;">
-		        <p style="padding-left:5px;">Titre : {{ title }}</p>
-                <p style="padding-left:5px;">Popularité : {{ popularity }}</p>
-                <p style="padding-left:5px;">Date : {{ date }}</p>
-	          </div>
+              <div style="position:relative;border-top-left-radius:10px 10px; border-top-right-radius:10px 10px;">
+
+                  <div style="position: absolute;top:5%;left:5%;">
+
+                    <?php if(isset($_GET["mode"]) && $_GET["mode"]=="choisir-films") {?>
+
+                    <a href="javascript:void();" :id="'ajouter-' + idfilm" onclick="ajouterfilm(this.id);"
+                       style="background-color:orangered;color:white;border-radius:20px;padding:5px;padding-left: 20px;padding-right: 20px;">Ajouter</a>
+
+                    <?php } ?>
+
+                    <a href="javascript:void();" :id="'consulter-' + idfilm" onclick="consultationFilm(this.id);"
+                       style="background-color:orangered;color:white;border-radius:20px;padding:5px;padding-left: 20px;padding-right: 20px;">Consulter</a>
+                  </div>
+
+                  <div style="border-top-left-radius:10px 10px; border-top-right-radius:10px 10px;">
+                    <img v-if="path_backdrop!=null" :src="src" width="100%" style="border-top-left-radius:10px 10px; border-top-right-radius:10px 10px;">
+                    <img v-else-if="poster_path!=null" :src="srcposter" width="100%" style="border-top-left-radius:10px 10px; border-top-right-radius:10px 10px;">
+                    <p style="padding-left:5px;">Titre : {{ title }}</p>
+                    <p style="padding-left:5px;">Popularité : {{ popularity }}</p>
+                    <p style="padding-left:5px;">Date : {{ date }}</p>
+                  </div>
+              </div>
             `
         })
 
@@ -147,8 +193,10 @@
             <div>
                 <select placeholder="Filtre par certification d'âge FR"
                     style="padding:5px;outline:none;border:none; background-color:transparent; color:white; border-bottom: 2px solid MediumSeaGreen;text-align:left;" onchange="loadFilms(this);">
-                    <option value="-1" style="color:black;">Recherche par catégorie</option>
-                    <option v-for="option in options" :value="option.certification" style="color:black;">{{option.certification}}</option>
+                    <option value="-1" style="color:black;text-align: center;">Recherche par classe d'age</option>
+                    <option v-for="option in options" :value="option.certification" style="color:black;">
+                       {{option.certification + '-' + option.meaning}}
+                    </option>
                 </select>
             </div>
         `
@@ -243,28 +291,60 @@
             }
         }
 
-        function consultationFilm(This){
-            window.location = "./consultation-film.php?filmId=" + This.id;
+        function consultationFilm(idfilm){
+            let reg = new RegExp("[-]");
+            window.location = "./consultation-film.php?filmId=" + idfilm.split(reg)[1];
         }
 
-        function getClassificationCourt(meaning){
-            let result = meaning.indexOf(")");
-            let resulti = meaning.indexOf("(");
-            return meaning.substring(resulti+1, result);
+        function getClassificationCourt(meaning, regle){
+            let reg = new RegExp("[(,)]");
+            return meaning.split(reg)[1];
         }
 
         function api_getCertificationFilmsFR(){
-            axios.get('https://api.themoviedb.org/3/certification/movie/list?api_key=698099b300e1dd87a14b503850a01e56&language=en-US&')
+            axios.get('https://api.themoviedb.org/3/certification/movie/list?api_key=698099b300e1dd87a14b503850a01e56&language=en-US')
                 .then(function (response) {
                     appF.certifications = response.data.certifications.FR;
-                    for(let i=0;i<appF.certifications.length;i++){
-                        response.data.certifications.FR.meaning = getClassificationCourt(response.data.certifications.FR.meaning);
+                    for(let i=0; i<appF.certifications.length; i++){
+                        appF.certifications[i].meaning = getClassificationCourt(appF.certifications[i].meaning);
                     }
-                    appF.certifications = response.data.certifications.FR;
                 })
                 .catch(function (error) {
                     mess  = "Erreur ! Impossible d'accéder à l'API." + error
                 })
+        }
+
+        function ajouterfilm(idFilm){
+            // Enregistrer dans le local stage les films sélectionnés
+            let reg = new RegExp("[-]");
+            let value = localStorage.getItem(""+idFilm);
+            if(value == null){
+                localStorage.setItem("" + idFilm, (""+idFilm).split(reg)[1]);
+            }else{
+                localStorage.removeItem(""+idFilm);
+            }
+            affecterSelection();
+        }
+
+        function affecterSelection(){
+            let filmIds = "";
+            for (let i = 0; i < localStorage.length; i++) {
+                if(filmIds!=""){
+                    filmIds = filmIds +";";
+                }
+                filmIds = filmIds + localStorage.getItem(localStorage.key(i));
+            }
+            document.querySelector("#filmsId").value = filmIds;
+        }
+
+        function validForm(){
+            if(document.querySelector("#filmsId").value.length>0){
+                localStorage.clear();
+                return true;
+            }else{
+                alert("Aucun film sélectionné !!")
+            }
+            return false;
         }
 
         loadCaterogies();
